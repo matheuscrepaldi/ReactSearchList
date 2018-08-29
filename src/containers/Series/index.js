@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SeriesList from '../../components/SeriesList';
 import Loader from '../../components/Loader';
 import Intro from '../../components/Intro';
+import TextField from '../../components/TextFields';
 
 class Series extends Component {
 
@@ -27,7 +28,7 @@ class Series extends Component {
             <div>
                  <Intro message="Aqui você pode encontrar todas as suas séries favoritas" />
                 <div>
-                    <input value={seriesName} type="text" onChange={this.onSeriesInputChange} />
+                    <TextField value={seriesName} change={this.onSeriesInputChange} />
                 </div>
                 { !isFetching && series.length === 0  && seriesName.trim() === '' && <p>Por favor, insira o nome da série</p> }
                 { !isFetching && series.length === 0  && seriesName.trim() !== '' && <p>Nehuma série foi encontrada na sua pesquisa</p> }
